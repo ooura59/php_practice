@@ -3,16 +3,16 @@
 もし違ったら「あなたの名前ではありません」と表示するように実装してください
 */
 $name="大浦";
-if ($name) {
-        echo"私は大浦です";}
-            else {
-                echo "大浦ではありません";
+if ($name =="大浦"){
+    echo"私は大浦です";}
+ else {
+    echo "大浦ではありません";
 }
 //課題２　for文を使って、1から10000までの合計の値を表示してください
-for ($i = 0; $i <= 10000; $i++){
+/*for ($i = 0; $i <= 5; $i++){
     $total += $i;
 }
-echo $total;
+echo $total;*/
 //課題３　$fruits に配列で好きなフルーツを5個代入し、foreach文で順番に出力してください
 $fruits = array("すいか","もも","ぶどう","いちご","みかん");
 foreach($fruits as $fruit){
@@ -36,6 +36,11 @@ $start = 1;
 $end = 100;
 for ($i = $start; $i <= $end; $i++){
     if ($i % 5 == 0){
-        echo $i;
-        }
+        echo $i."\n";
     }
+}
+
+for ($i = 0; $i <= 10000; $i++){
+    $total += $i;
+}
+echo $total;

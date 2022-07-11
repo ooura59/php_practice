@@ -1,14 +1,15 @@
 <?php
 //1.引数に数値を指定して実行すると、数値を2倍にして返す関数を作成してください
     function keisan($num){
-     //$result = 0; 修正
-     return $num * 2;}
+     //$result = 0; リターンで返す時に定義する必要があれば必要
+        return $num * 2;
+    }
     echo keisan(600);
     echo "\n";
 //2.$a と $b を仮引数に持ち、　$a と $b　を足した結果を返す関数を作成してください
     function add($a,$b){
      //$result = 0; 修正
-     return $a + $b;
+        return $a + $b;
     }
     echo add(12,4);
     echo "\n";
@@ -17,10 +18,15 @@
 //print_r($arr); 配列表示されるコメントアウト
 //ar($arr);　　　例題１，２と形式合わせのためコメントアウト
     function ar($arr){
-        $result=$arr[0];
-        for ($i=1; $i<count($arr); $i++){
-              $result *= $arr[$i];
+        //$result=$arr[0];　for文で定義するので必要ない
+        $result=1; //s数字としての１
+        foreach ($arr as $number) { //ループしたい配列 as 配列の中身(わかりやす文字を入れる$numberは１ ３ ６ ７ ９をさす）
+            $result *=$number;
         }
+        
+        /*for ($i=0; $i<=count($arr); $i++){ ミスが起きやすい
+              $result *= $arr[$i];
+        }*/
         return $result;
        //echo $result;
     }
@@ -34,17 +40,19 @@ function max_array($arr){
  //どうしたらいいかわからない・・・・
  }
  return $max_number;*/
- 
     function max_array($arr){
-        $max_number = $arr[0];
+         //$max_number = $arr[0];　//配列の０番目から調べてね
+         $max_number = $arr[0];
         foreach($arr as $a){
-         if($a > $max_number){
-             $max_number = $a;
+        if($max_number < $a){
+                    $max_number =$a;
+                }
             }
-         }
-     return $max_number;
+        return $max_number;
     // echo $max_number;修正
-    }  
+        } 
+        //$max_number = $arr[0];
+
     $arr = array(1,3,6,7,9);
     echo max_array($arr);
     echo "\n";
